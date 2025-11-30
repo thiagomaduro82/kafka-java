@@ -14,8 +14,8 @@ public class FipeClient {
         this.restClient = restClient;
     }
 
-    public Map getModelsByBrandId(Integer brandId) {
-        String url = String.format("https://parallelum.com.br/fipe/api/v1/carros/marcas/%s/modelos", brandId);
+    public Map getModelsByBrandId(String brandCodigo) {
+        String url = String.format("https://parallelum.com.br/fipe/api/v1/carros/marcas/%s/modelos", brandCodigo);
         return restClient.get().uri(url).retrieve().body(Map.class);
     }   
     

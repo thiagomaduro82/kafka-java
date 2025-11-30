@@ -1,12 +1,7 @@
-package com.fipe.api2.domain;
+package com.fipe.api1.domain.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,9 +12,6 @@ public class Brand {
     private Long id;
 
     private String name;
-
-    @OneToMany(mappedBy = "brand", cascade = CascadeType.ALL)
-    private List<Vehicle> vehicles = new ArrayList<>();
 
     public Brand() {
         super();
@@ -46,12 +38,4 @@ public class Brand {
         this.name = name;
     }
 
-    public List<Vehicle> getVehicles() { 
-        return vehicles; 
-    }
-
-    public void setVehicles(List<Vehicle> vehicles) { 
-        this.vehicles = vehicles; 
-    }
-    
 }

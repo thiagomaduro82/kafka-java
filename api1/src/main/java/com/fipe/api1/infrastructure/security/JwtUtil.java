@@ -11,7 +11,7 @@ import java.security.Key;
 @Component
 public class JwtUtil {
 
-    private final Key secret = Keys.hmacShaKeyFor("MySecretKeyJWT0987654321".getBytes());
+    private final Key secret = Keys.secretKeyFor(SignatureAlgorithm.HS256);
     private final long expirationMillis = 3600000; // 1 hour
 
     public String generateToken(String username) {

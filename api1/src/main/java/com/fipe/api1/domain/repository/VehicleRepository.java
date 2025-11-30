@@ -6,8 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.fipe.api1.domain.model.Vehicle;
 
-public interface VehicleRepository extends JpaRepository<Vehicle, String> {
-
-    List<Vehicle> findByBrand(String brand);
+public interface VehicleRepository extends JpaRepository<Vehicle, Long> {
+    
+    List<Vehicle> findByBrandId(Long brandId);
     
 }
