@@ -1,4 +1,4 @@
-package com.fipe.api1.domain.model;
+package com.fipe.api2.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

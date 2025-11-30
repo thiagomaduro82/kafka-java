@@ -1,7 +1,19 @@
-CREATE TABLE IF NOT EXISTS modelos (
+CREATE TABLE IF NOT EXISTS events (
     id SERIAL PRIMARY KEY,
-    codigo_modelo INT NOT NULL,
-    nome_modelo VARCHAR(200) NOT NULL,
-    codigo_marca INT NOT NULL,
-    nome_marca VARCHAR(200) NOT NULL
+    topic VARCHAR(200) NOT NULL,
+    payload TEXT NOT NULL,
+    status VARCHAR(50) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS brands (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(200) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS vehicles (
+    id SERIAL PRIMARY KEY,
+    model_name VARCHAR(200) NOT NULL,
+    brand_id SERIAL NOT NULL,
+    observation VARCHAR(2000)
 );

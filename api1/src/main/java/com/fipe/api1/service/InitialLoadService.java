@@ -19,10 +19,7 @@ public class InitialLoadService {
 
     public void loadBrands() {
         BrandDTO[] brands = fipeClient.fetchBrands();
-
-        for (BrandDTO brand : brands) {
-            brandProducer.sendBrand(brand);
-        }
+        brandProducer.sendBrands(brands);
     }
-    
+
 }
